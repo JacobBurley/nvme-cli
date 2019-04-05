@@ -2866,7 +2866,7 @@ static void show_registers_cap(struct nvme_bar_cap *cap)
 
 static void show_registers_version(__u32 vs)
 {
-	printf("\tNVMe specification %d.%d\n\n", (vs & 0xffff0000) >> 16,  (vs & 0x0000ff00) >> 8);
+	printf("\tNVMe specification: %d.%d\n\n", (vs & 0xffff0000) >> 16,  (vs & 0x0000ff00) >> 8);
 }
 
 static void show_registers_cc_ams (__u8 ams)
@@ -2954,7 +2954,7 @@ static void show_registers_aqa(__u32 aqa)
 static void show_registers_cmbloc(__u32 cmbloc, __u32 cmbsz)
 {
 	if (cmbsz == 0) {
-		printf("\tController Memory Buffer feature is not supported\n\n");
+		printf("\tController Memory Buffer: feature is not supported\n\n");
 	}
 	else {
 		printf("\tOffset                 (OFST): %x (See cmbsz.szu for granularity)\n",
@@ -2980,7 +2980,7 @@ static char *nvme_register_szu_to_string(__u8 szu)
 static void show_registers_cmbsz(__u32 cmbsz)
 {
 	if (cmbsz == 0) {
-		printf("\tController Memory Buffer feature is not supported\n\n");
+		printf("\tController Memory Buffer: feature is not supported\n\n");
 		return;
 	}
 	printf("\tSize                      (SZ): %u\n", (cmbsz & 0xfffff000) >> 12);
